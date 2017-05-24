@@ -28,16 +28,25 @@ class MainActivity : AppCompatActivity() {
      * 初始化listview
      */
     fun initListView(){
-        dataList.add(Menu("Test"))
+        // add menus
+        dataList.add(Menu("sayHello"))
         dataList.add(Menu("People4 Print"))
+        // init listView
         adapter = MenuAdapter(this,dataList)
         listView?.adapter = adapter
         listView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            var tests = TestManager()
             when(position){
-                0 -> println("点击了Test方法")
+                0 ->{
+                    tests.sayHello("tom")
+//                    var content = tests.sayHello(100)
+//                    println(content)
+                }
                 1 -> {
-                    var tests = TestManager()
                     tests.printPeople4()
+                }
+                2 ->{
+
                 }
                 else ->{
                     println("点击了listview")

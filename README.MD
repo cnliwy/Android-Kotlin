@@ -1,4 +1,4 @@
-kotlin 学习笔记基础篇（一）
+android kotlin 学习笔记基础篇（一）
 ===
 **一、基本类型**
 ```
@@ -71,15 +71,21 @@ class People{
        在People类里声明三个属性，同时主构造方法传入这三个参数，并且声明只有一个name参数的次构造方法。Kotlin语法要求，次构造方法必须委托给主构造函数去初始化成员属性,委托方式即上面代码的this部分：this(name,0,"")。
        
 4 继承
-java里的继承关键字是extends。这里又帮同志们省略了一个单词。假如我们想新建个Strudent类，使其继承People类，可以通过如下方式：
-1 首先需声明People为open
-open class People{
-}
-2 继承People
-class Student : People{
+    java里的继承关键字是extends。这里又帮同志们省略了一个单词。假如我们想新建个Strudent类，使其继承People类，可以通过如下方式：
+    1) 首先需声明People为open
+    open class People{
+    }
+    2) 继承People
+    class Student : People{
 
-}
+    }
 与open对应的修饰词是final，open表示可继承的，final则相反-禁止继承。
+
+5 对象生成
+对象的生成在kotlin里可没有new关键字。kotlin的对象生成是这个样子的：
+var prople = People("tom",25)
+直接类名，括号，传入构造方法里要求的参数即可。
+还是比较简洁的。
 ```
 
 **四、可见性修饰域**
@@ -102,7 +108,36 @@ kotlin的可见性修饰域有4个：private、 protected、 internal 和 public
 
 ```
 
+**五、函数（方法）**
+```
+Kotlin 中的函数使用 fun 关键字声明.我们先来一个最简单的无参无返回对象的方法：
+fun sayHello(){
+    println("hello world")
+}
+调用:sayHello()
+
+有参数无返回值方法：
+fun sayHello(name : String){
+    var content = name + ":hello world";
+    println(content)
+ }
+ 调用:sayHello("tom")
+ 
+ 有参数有返回值方法：
+fun sayHello(time : Int):String{
+    var content = StringBuffer().append("I have said ").append(time).append(" times!")
+    return content.toString()
+}
+调用:var content = sayHello(100)
+```
+
+
 **学习地址**
 ```
 https://www.kotlincn.net/docs/reference/
+```
+
+**kotlin demo演示(持续更新哦)**
+```
+https://github.com/cnliwy/Android-Kotlin
 ```
