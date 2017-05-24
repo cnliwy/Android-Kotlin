@@ -29,10 +29,21 @@ class MainActivity : AppCompatActivity() {
      */
     fun initListView(){
         dataList.add(Menu("Test"))
+        dataList.add(Menu("People4 Print"))
         adapter = MenuAdapter(this,dataList)
         listView?.adapter = adapter
         listView!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            println("点击了方法")
+            when(position){
+                0 -> println("点击了Test方法")
+                1 -> {
+                    var tests = TestManager()
+                    tests.printPeople4()
+                }
+                else ->{
+                    println("点击了listview")
+                }
+            }
+
         }
     }
 }
