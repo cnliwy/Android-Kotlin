@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                     println("点击了listview")
                 }
             }
-
         }
     }
 }
