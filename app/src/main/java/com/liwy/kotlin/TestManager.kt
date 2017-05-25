@@ -1,5 +1,6 @@
 package com.liwy.kotlin
 
+import com.liwy.kotlin.bean.Menu
 import com.liwy.kotlin.bean.People4
 
 /**
@@ -27,6 +28,30 @@ class TestManager {
         sb.append(people4.name).append(",").append(people4.age).append(",".apply { people4.remark })
         println(sb.toString())
     }
+
+    fun testWhen(a : Int){
+        var text = when(a){
+            0 -> "i'm 0"
+            else-> "i'm else"
+        }
+        println(text)
+    }
+
+    fun testFor(list : MutableList<Menu>){
+//        for (menu in list){
+//            println(menu.title)
+//        }
+
+//        for (i in list.indices){
+//            println(list[i].title)
+//        }
+
+        for ((i,value) in list.withIndex()){
+            println("position:$i,value:$value")
+        }
+    }
+
+
 
 
 }

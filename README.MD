@@ -130,6 +130,87 @@ fun sayHello(time : Int):String{
 }
 调用:var content = sayHello(100)
 ```
+
+**六、控制语句**
+```
+1.if语句
+基本用法还是跟c、java差不多的
+if(a > b){
+    ...
+}else{
+    ...
+}
+但是比java牛叉一点的是它不仅仅是一个控制语句，它还可以作为一个表达式，是不是很厉害？就问你怕不怕？！
+eg:求a和b的最大值
+    var max = if(a>b) a else b
+
+
+2 when
+when相当于java里的switch。kotlin里没有switch了，改用了when。用法如下：
+when(a){
+    0 -> {
+        ...
+    }
+    1 -> {
+        ...
+    }
+    else ->{
+        ...
+    }
+}
+这里的else块明显就相当于java的default了，当其他分支条件不满足的事情，就会进入else的方法里。
+另外when也可以作为表达式使用
+eg:
+    fun testWhen(a : Int){
+            var text = when(a){
+                0 -> "i'm 0"
+                else-> "i'm else"
+            }
+            println(text)
+     }
+     testWhen(0)
+     结果：i'm 0
+
+
+
+
+3 for循环
+先吃一个遍历集合对象的栗子吧
+fun testFor(list : Collection<Menu>){
+        for (menu in list){
+            println(menu.title)
+        }
+ }
+ 结果：依次输出了集合中menu的title属性。
+
+还可以通过索引去遍历集合或数组中的元素：
+ fun testFor(list : MutableList<Menu>){
+        for (i in list.indices){
+            println(list[i].title)
+        }
+    }
+ 来，再看个更洋气的：
+  fun testFor(list : MutableList<Menu>){
+         for ((i,value) in list.withIndex()){
+              println("position:$i,value:$value")
+          }
+   }
+通过withIndex方法直接遍历出该对象在集合中的index和其对象本身。
+
+
+4 while和do while循环
+到了while这里终于回归正常了，用法跟java一样
+while (x > 0) {
+    ...
+}
+
+do {
+     var a = getValue()
+     println(a)
+    }while (a < 10)// a 在此处可见
+do while循环这里就又多了个只是点，在do块里声明的变量可以在while里使用。
+```
+
 **未完待续...**
 
 **学习地址**

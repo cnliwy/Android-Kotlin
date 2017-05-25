@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         // add menus
         dataList.add(Menu("sayHello"))
         dataList.add(Menu("People4 Print"))
+        dataList.add(Menu("when语句"))
+        dataList.add(Menu("for语句"))
         // init listView
         adapter = MenuAdapter(this,dataList)
         listView?.adapter = adapter
@@ -46,8 +48,9 @@ class MainActivity : AppCompatActivity() {
                     tests.printPeople4()
                 }
                 2 ->{
-
+                    tests.testWhen(0)
                 }
+                3 -> tests.testFor(dataList)
                 else ->{
                     println("点击了listview")
                 }
