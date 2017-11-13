@@ -1,5 +1,6 @@
 package com.liwy.kotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.AdapterView
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         dataList.add(Menu("People4 Print"))
         dataList.add(Menu("when语句"))
         dataList.add(Menu("for语句"))
+        dataList.add(Menu("ListView"))
         // init listView
         adapter = MenuAdapter(this,dataList)
         listView?.adapter = adapter
@@ -51,6 +53,10 @@ class MainActivity : AppCompatActivity() {
                     tests.testWhen(0)
                 }
                 3 -> tests.testFor(dataList)
+                4->{
+                    var intent = Intent(this,UserActivity::class.java)
+                    startActivity(intent)
+                }
                 else ->{
                     println("点击了listview")
                 }

@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         }
         loginBtn = findViewById(R.id.loginBtn) as Button
         loginBtn?.setOnClickListener { login(usernameEt!!.text.toString(), pwdEt!!.text.toString()) }
+        usernameEt?.text.toString()?:"hello"
 
     }
 

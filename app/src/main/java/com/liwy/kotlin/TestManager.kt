@@ -47,7 +47,8 @@ class TestManager {
 //        }
 
         for ((i,value) in list.withIndex()){
-            println("position:$i,value:$value")
+//            println("position:$i,value:$value")
+            println("position:$i,value:" + value.title);
         }
     }
 
