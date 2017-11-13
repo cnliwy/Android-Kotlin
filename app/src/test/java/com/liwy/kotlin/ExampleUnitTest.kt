@@ -1,6 +1,7 @@
 package com.liwy.kotlin
 
 import com.liwy.kotlin.bean.Data
+import com.liwy.kotlin.bean.People1
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -28,5 +29,15 @@ class ExampleUnitTest {
 
         var msgData = Data.MsgData()
         msgData.getMsg()
+    }
+
+    @Test
+    fun testInterface(){
+        var p1 = People1("liwy")
+        p1.say()
+        p1.run()
+        val p2 = People1("tom")
+        p2.say()
+        p2.run()
     }
 }
