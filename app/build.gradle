@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-ext{
+ext {
     support_version = "25.3.1"
-    build_version = "25.0.2"
+    build_version = "26.0.2"
+    butterknife = "8.5.1"
 }
 android {
     compileSdkVersion 25
-    buildToolsVersion "$build_version"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.liwy.kotlin"
         minSdkVersion 15
@@ -30,9 +31,13 @@ dependencies {
     })
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile "com.android.support:appcompat-v7:$support_version"
+    compile "com.jakewharton:butterknife:$butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'kotlin-android-extensions'

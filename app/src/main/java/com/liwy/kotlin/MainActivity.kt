@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         dataList.add(Menu("when语句"))
         dataList.add(Menu("for语句"))
         dataList.add(Menu("ListView"))
+        dataList.add(Menu("文件操作"))
         // init listView
         adapter = MenuAdapter(this,dataList)
         listView?.adapter = adapter
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
                 3 -> tests.testFor(dataList)
                 4->{
                     var intent = Intent(this,UserActivity::class.java)
+                    startActivity(intent)
+                }
+                5->{
+                    var intent = Intent(this,FileActivity::class.java)
                     startActivity(intent)
                 }
                 else ->{
