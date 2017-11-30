@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import android.widget.Toast.makeText
+import com.liwy.kotlin.bean.Data
 import java.io.File
 
 class FileActivity : AppCompatActivity() {
@@ -19,7 +20,6 @@ class FileActivity : AppCompatActivity() {
     var findBtn : Button? = null
     var fileName : String? = Environment.getExternalStorageDirectory().absolutePath + "/kotlin.txt"
     var context : Context ? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

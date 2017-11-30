@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import com.liwy.kotlin.bean.Data
+import com.liwy.kotlin.bean.Menu
 
 class LoginActivity : AppCompatActivity() {
 
@@ -30,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.loginBtn) as Button
         loginBtn?.setOnClickListener { login(usernameEt!!.text.toString(), pwdEt!!.text.toString()) }
         usernameEt?.text.toString()?:"hello"
-
+        test()
     }
 
     fun login(username: String, pwd: String) {
@@ -42,5 +44,13 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    fun test(){
+        var menu = Menu("menu-title")
+        menu.data = Data("tom")
+        menu.data2 = Data("jeck")
+        menu.initContent("CEO")
+        menu.printContent()
     }
 }

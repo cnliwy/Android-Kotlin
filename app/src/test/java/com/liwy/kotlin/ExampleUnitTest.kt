@@ -1,6 +1,7 @@
 package com.liwy.kotlin
 
 import com.liwy.kotlin.bean.Data
+import com.liwy.kotlin.bean.Menu
 import com.liwy.kotlin.bean.People1
 import org.junit.Test
 
@@ -51,5 +52,15 @@ class ExampleUnitTest {
     fun People1.say(count:Int){
         say()
         println(name + "说了"+ count+"次还是没说清")
+    }
+
+
+    @Test
+    fun testKuozhan(){
+        var menu = Menu("menu-title")
+        menu.data = Data("tom")
+        menu.initContent("this is tom's content")
+        menu.printContent()
+
     }
 }
